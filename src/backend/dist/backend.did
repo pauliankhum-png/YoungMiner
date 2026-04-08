@@ -1,0 +1,35 @@
+type UpgradeType = 
+ variant {
+   cooling;
+   cpu;
+   gpu;
+ };
+type UpgradeResult = 
+ variant {
+   insufficientFunds: record {
+                        available: nat;
+                        required: nat;
+                      };
+   ok: GameState;
+ };
+type Timestamp = int;
+type GameState = 
+ record {
+   coinBalance: nat;
+   coinsPerSecond: nat;
+   coolingCount: nat;
+   cpuCount: nat;
+   gpuCount: nat;
+   lastSaveTimestamp: Timestamp;
+   totalClicks: nat;
+ };
+service : {
+  buyUpgrade: (upgradeType: UpgradeType) -> (UpgradeResult);
+  click: () -> (GameState);
+  collectCoins: () -> (GameState);
+  getGameState: () -> (GameState);
+  getUpgradeCost: (upgradeType: UpgradeType) -> (nat) query;
+  loadGameState: () -> (opt GameState) query;
+  purchaseUpgrade: (upgradeType: UpgradeType) -> (UpgradeResult);
+  resetGameState: () -> ();
+}

@@ -1,0 +1,32 @@
+// Version: 1.0.0
+type Data__791452850<K, V> =
+  {var count : Nat__490723111; kvs : [var ?(K, V)]};
+type GameStateInternal__611397069 =
+  {
+    var coinBalance : Nat;
+    var coinsPerSecond : Nat;
+    var coolingCount : Nat;
+    var cpuCount : Nat;
+    var gpuCount : Nat;
+    var lastSaveTimestamp : Timestamp__983292534;
+    var totalClicks : Nat
+  };
+type Internal__8484328<K, V> =
+  {children : [var ?Node__46230540<K, V>]; data : Data__791452850<K, V>};
+type Leaf__809889148<K, V> = {data : Data__791452850<K, V>};
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type Node__46230540<K, V> =
+  {#internal : Internal__8484328<K, V>; #leaf : Leaf__809889148<K, V>};
+type Timestamp__301639476 = Int;
+type Timestamp__983292534 = Timestamp__301639476;
+type UserId__158757552 = Principal;
+type UserId__470067749 = UserId__158757552;
+actor {
+  stable gameStates :
+    {
+      var root :
+        Node__46230540<UserId__470067749, GameStateInternal__611397069>;
+      var size : Nat__490723111
+    }
+};

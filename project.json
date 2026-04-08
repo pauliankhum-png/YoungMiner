@@ -1,0 +1,21 @@
+{
+  "overview": "A crypto mining idle clicker game where players mine virtual coins, earn passive income, and upgrade their rigs. Log in to save progress and build your ultimate mining empire.",
+  "features": [
+    "Click-to-mine for instant coin rewards",
+    "Passive income that generates coins per second",
+    "Rig upgrade shop with CPU, GPU, and Cooling upgrades",
+    "Real-time stats: balance, coins/sec, rig power",
+    "Internet Identity login to save and restore progress",
+    "Responsive layout for mobile and desktop"
+  ],
+  "category": "game",
+  "tags": [
+    "crypto",
+    "idle-clicker",
+    "mining",
+    "game",
+    "simulator",
+    "web3"
+  ],
+  "last_updated": "2026-04-08T11:06:18.257Z"
+}
